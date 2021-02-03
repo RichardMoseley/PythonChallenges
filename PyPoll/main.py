@@ -32,9 +32,7 @@ with open(readFile) as csvfile:
         allCan_data.append(i[2])
     for j in canVote["Candidate"]:
         canVote["Votes"].append(allCan_data.count(j))
-    for cans, votes in canVote:
-        if votes > votes + 1:
-            winner = cans
+
 
 print(winner)
 
