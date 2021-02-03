@@ -55,6 +55,7 @@ with open(writeFile, 'w') as outputFile:
     outputFile.write("Election Results\n")
     outputFile.write("----------------------------\n")
     outputFile.write(f"Total Votes: {totalCast}\n")
+    outputFile.write("----------------------------\n")
     for m in canVote["Candidate"]:
         indx = canVote["Candidate"].index(m)
         outputFile.write(
