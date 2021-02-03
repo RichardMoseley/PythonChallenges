@@ -32,8 +32,9 @@ with open(readFile) as csvfile:
         allCan_data.append(i[2])
     for j in canVote["Candidate"]:
         canVote["Votes"].append(allCan_data.count(j))
-    topVote = max(canVote["Votes"].index)
-    winner = canVote["Candidate"][topVote]
+    topVote = max(canVote["Votes"])
+    voteIndex = canVote["Votes"].index(topVote)
+    winner = canVote["Candidate"][voteIndex]
 
 print(winner)
 
