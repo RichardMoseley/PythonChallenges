@@ -1,7 +1,7 @@
 import os
 import csv
 
-readFile = "./Resources/budget_data.csv"
+readFile = "./Resources/election_data.csv"
 writeFile = "./Analysis/Analysis.txt"
 
 # The total number of votes cast
