@@ -50,7 +50,7 @@ with open(readFile) as csvfile:
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {months}")
-print(f"Total: ${pL}")
+print(f"Total Net Profit: ${pL}")
 print(f"Total Change in Profit: ${plChng}")
 print(f"Average Change: ${round(avgPL, 2)}")
 print(f"Greatest Increase in Profits: {gtstInc['date']}(${gtstInc['amount']})")
@@ -61,7 +61,7 @@ with open(writeFile, 'w') as outputFile:
     outputFile.write("Financial Analysis\n")
     outputFile.write("----------------------------\n")
     outputFile.write(f"Total Months: {months}\n")
-    outputFile.write(f"Total: {pL}\n")
+    outputFile.write(f"Total Net Profit: ${pL}\n")
     outputFile.write(f"Total Change in Profit: ${plChng}\n")
     outputFile.write(f"Average Change: ${round(avgPL, 2)}\n")
     outputFile.write(
