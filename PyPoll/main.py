@@ -11,11 +11,11 @@ totalCast = 0
 canList = []
 
 # The percentage of votes each candidate won
-canPer = 0.00
+# REMOVED VARIABLE AND ADDED TO DICT
 
 # The total number of votes each candidate won
 allCan_data = []
-canVote = {"Candidate": [], "Votes": []}
+canVote = {"Candidate": [], "Votes": [], "VotePerc": []}
 
 # The winner of the election based on popular vote.
 winner = ""
@@ -32,11 +32,15 @@ with open(readFile) as csvfile:
         allCan_data.append(i[2])
     for j in canVote["Candidate"]:
         canVote["Votes"].append(allCan_data.count(j))
+    for k in canVote["Votes"]:
+        percent = k / totalCast
+        canVote["VotePerc"].append(percent)
+
     topVote = max(canVote["Votes"])
     voteIndex = canVote["Votes"].index(topVote)
     winner = canVote["Candidate"][voteIndex]
 
-print(winner)
+print(canVote)
 
 # As an example, your analysis should look similar to the one below:
 
