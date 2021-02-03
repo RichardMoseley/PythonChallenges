@@ -15,7 +15,7 @@ canPer = 0.00
 
 # The total number of votes each candidate won
 allCan_data = []
-canVote = {"Candidate": "", "Votes": 0}
+canVote = {"Candidate": [], "Votes": []}
 
 # The winner of the election based on popular vote.
 winner = ""
@@ -28,10 +28,10 @@ with open(readFile) as csvfile:
         if i[2] not in canList:
             canList.append(i[2])
         if i[2] not in canVote["Candidate"]:
-            canVote["Candidate"] = i[2]
-        allCan_data.append(i[2])
-        for j in canVote["Candidate"]:
-            canVote["Votes"] = allCan_data.count(j)
+            canVote["Candidate"].append(i[2])
+        # allCan_data.append(i[2])
+        # for j in canVote["Candidate"]:
+        #     canVote["Votes"] = allCan_data.count(j)
 
 
 print(canVote)
