@@ -33,14 +33,13 @@ with open(readFile) as csvfile:
     for j in canVote["Candidate"]:
         canVote["Votes"].append(allCan_data.count(j))
     for k in canVote["Votes"]:
-        percent = k / totalCast
+        percent = (k / totalCast)*100
         canVote["VotePerc"].append(round(percent, 3))
 
     topVote = max(canVote["Votes"])
     voteIndex = canVote["Votes"].index(topVote)
     winner = canVote["Candidate"][voteIndex]
 
-print(canVote)
 
 # As an example, your analysis should look similar to the one below:
 
