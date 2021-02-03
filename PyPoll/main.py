@@ -34,7 +34,7 @@ with open(readFile) as csvfile:
         canVote["Votes"].append(allCan_data.count(j))
     for k in canVote["Votes"]:
         percent = k / totalCast
-        canVote["VotePerc"].append(percent)
+        canVote["VotePerc"].append(round(percent, 3))
 
     topVote = max(canVote["Votes"])
     voteIndex = canVote["Votes"].index(topVote)
