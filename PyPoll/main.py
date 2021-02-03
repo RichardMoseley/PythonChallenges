@@ -40,6 +40,28 @@ with open(readFile) as csvfile:
     voteIndex = canVote["Votes"].index(topVote)
     winner = canVote["Candidate"][voteIndex]
 
+print("Election Results\n")
+print("----------------------------\n")
+print(f"Total Votes: {totalCast}\n")
+print("----------------------------\n")
+for l in canVote["Candidate"]:
+    indx = canVote["Candidate"].index(l)
+    print(f"{l}: {canVote['VotePerc'][indx]}% ({canVote['Votes'][indx]})\n")
+print("----------------------------\n")
+print(f"Winner: {winner}\n")
+print("----------------------------\n")
+
+with open(writeFile, 'w') as outputFile:
+    outputFile.write("Election Results\n")
+    outputFile.write("----------------------------\n")
+    outputFile.write(f"Total Votes: {totalCast}\n")
+    for m in canVote["Candidate"]:
+        indx = canVote["Candidate"].index(m)
+        outputFile.write(
+            f"{m}: {canVote['VotePerc'][indx]}% ({canVote['Votes'][indx]})\n")
+    outputFile.write("----------------------------\n")
+    outputFile.write(f"Winner: {winner}\n")
+    outputFile.write("----------------------------\n")
 
 # As an example, your analysis should look similar to the one below:
 
