@@ -43,7 +43,7 @@ with open(readFile) as csvfile:
     for values in plChng['amount']:
         valueSum += values
     trueSum = valueSum - frstRow_pl
-    avgPL = valueSum / (len(plChng['amount']) - 1)
+    avgPL = trueSum / (len(plChng['amount']) - 1)
 
 # print results
 print("Financial Analysis")
